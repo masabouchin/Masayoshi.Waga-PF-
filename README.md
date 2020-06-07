@@ -24,4 +24,4 @@ https://www.draw.io/#G19ZJv_dxRP5dAzvknOqRrfm3kBVtEbuYP
 
 
 ### 機能一覧
-https://docs.google.com/spreadsheets/d/1_ng-x9X923wncOdpscVTXkKDEFuCw7XQMblEpxZnKfU/edit#gid=0
+https://docs.google.com/spreadsheets/d/1_ng-x9X923wncOdpscVTXkKDEFuCw7XQMblEpxZnKfU/edit?usp=sharing
