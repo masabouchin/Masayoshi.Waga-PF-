@@ -9,18 +9,17 @@ Rails.application.routes.draw do
     sessions: 'owners/sessions'
   }
 
-  devise_for :clients, controllers:{
+  devise_for :ad_clients, controllers:{
     registrations: 'ad_clients/registrations',
     sessions: 'ad_clients/sessions'
   }
+  
   root :to => 'homes#index'
   get 'homes/index'
   get 'homes/about'
 
   resources :admins, only:[:index]
   namespace :admins do
-  resources :ad_clients, only: [:index, :show, :update]
-  resources :owners, only: [:index, :show, :update]
   resources :genres, only: [:index, :create, :edit, :update, :destroy]
   resources :contacts, only: [:index,:show]
   end
@@ -36,7 +35,7 @@ Rails.application.routes.draw do
   end
   end
 
-  resources :os_owners, only:[:index, :show, :edit, :update]do
+  resources :owners, only:[:index, :show, :edit, :update]do
   member do
   get :dashboard
   get :followings, :followers
@@ -45,17 +44,7 @@ Rails.application.routes.draw do
   resources :car_informations, only:[:index, :create, :edit, :update, :destroy]
   resources :transfer_informations, only:[:index, :create, :edit, :update, :destroy]
   end
-  # resources :relationship_drivers, only:[:create, :destroy]
-  #広告主→ドライバーへのフォロー動作
-  #post 'relationships/:ad_client_id', to: 'relationship_drivers#create', as:'relationship_drivers'
-  #delete 'relationships/:ad_client_id', to: 'relationship_drivers#destroy'
-  #ドライバー→広告主へのフォロー動作
-  #post '/relationships/:driver_id',to: 'relationships#create',as:'relationships'
-  #delete '/relationships/:driver_id',to: 'relationships#destroy'
-  #広告主検索
-  #get '/search_ad_client', to: 'searchs#search_ad_client'
-  #ドライバー検索
-  #get '/search_driver', to: 'searchs#search_driver'
+
 
   resources :deal_details, only:[:index, :create, :update]
   resources :completed_deals, only:[:index, :show, :update]

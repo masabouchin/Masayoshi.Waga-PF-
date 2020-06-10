@@ -1,0 +1,2 @@
+module CompleteDealsHelper
+end
