@@ -1,0 +1,58 @@
+    <div class="row">
+    <div class="col-xs-3">
+    <!-- プロフィール -->
+    <% if ad_client_signed_in? %>
+    <%= render 'ad_clients/profile', ad_client: current_ad_client %>
+    <%= render 'ad_clients/sidebar', ad_client: current_ad_client %>
+    <% elsif driver_signed_in?%>
+    <%= render 'drivers/profile', driver: current_driver %>
+    <%= render "drivers/sidebar", driver: current_driver %>
+    <% end %><br>
+    </div>
+    <div class="col-xs-9">
+    <div class="ad-area">
+    <div class="ad-card">
+    <%= attachment_image_tag @ad, :ad_image, fallback: "no_image.jpg", size:'560x420' %>
+    <table>
+    <tr>
+    <th><h4><%= @ad.title %></h4></th>
+    </tr>
+    <tr>
+    <td><span class="ad-fee"><%= convert_fee(@ad.ad_fee) %></span>
+    <div id="favorites_buttons_<%= @ad.id %>"><%= render partial: 'favorites/favorite',locals: { ad: @ad } %></div>
+    </td>
+    </tr>
+    <tr>
+    <td><h4><%= @ad.heading %></h4></td>
+    </tr>
+    <tr>
+    <td><p><%= @ad.content %></p></td>
+    </tr>
+    </table>
+    <table class="table">
+    <tr>
+    <th>広告主</th>
+    <th>広告作業期間</th>
+    </tr>
+    <tr>
+    <td><%= @ad.ad_client.company_name %></td>
+    <td><%= @ad.start_date %><br>&emsp;〜<%= @ad.end_date %></td>
+    </tr>
+    <tr>
+    <th>ジャンル</th>
+    <th>AIタグ</th>
+    </tr>
+    <tr>
+    <td><%= @ad.genre.genre_name %></td>
+    <td> <% @ad.tags.each do |tag| %>
+    <span class="ai-label"><%= tag.name %></span>
+    <% end %>
+    </td>
+    </tr>
+    </table>
+    <span class="link-button" ><%= link_to "編集する", edit_ad_client_ad_path(@ad.ad_client.id,@ad.id)  %>
+    </div>
+    </div>
+    <span class="link-button" ><%= link_to "広告一覧へ戻る", ad_client_ads_path(current_ad_client)  %>
+    </div>
+    </div>

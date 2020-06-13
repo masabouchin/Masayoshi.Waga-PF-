@@ -1,0 +1,13 @@
+    <div class="row">
+    <div class="col-xs-3">
+    <%= render 'ad_clients/profile' , ad_client: @ad_client %><!-- プロフィール -->
+    <div class="ad-button-area">
+    <%= link_to "新規広告依頼", new_ad_client_ad_path(current_ad_client), data: {"turbolinks" => false }, class: "btn btn-default btn-lg ad-button" %>
+    </div>
+    <%= render 'ad_clients/sidebar', ad_client: current_ad_client %><!-- サイドバー -->
+    </div>
+    <div class="col-xs-9">
+    <%= render 'layouts/message_from_admin', ad_client: @ad_client %>
+    <%= render 'rooms/index', rooms: @rooms %>
+    <%= render 'under_deals/index',under_deals: @under_deals, finish_deals: @finish_deals %>
+    </div>

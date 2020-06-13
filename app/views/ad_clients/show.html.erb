@@ -1,0 +1,70 @@
+  <div class="row">
+  <div class="col-xs-3">
+  <% if ad_client_signed_in? %>
+  <%= render 'ad_clients/profile' , ad_client: current_ad_client %>
+  <%= render 'ad_clients/sidebar' , ad_client: current_ad_client %>
+  <% elsif owner_signed_in?%>
+  <%= render 'owners/profile' , driver: current_owner %>
+  <%= render "owners/sidebar", driver: current_owner %>
+  <% end %><br>
+  </div>
+
+
+  <div class = "col-xs-5">
+  <h4>広告主情報</h4>
+  <%= attachment_image_tag @ad_client, :profile_image, fallback: "no_image.jpg", size:'230x170'  %><br>
+  <div id="follow_ad_client_<%= @ad_client.id %>">
+  <%= render "relationship_owners/follow_ad_client", ad_client: @ad_client %>
+  </div>
+  <table class="table .table-borderless">
+  <tr id="follow_count_<%= @ad_client.id %>">
+  <%= render "relationship_drivers/follow_count_ad_client", ad_client: @ad_client %>
+  </tr>
+  <tr>
+  <th>会社名</th>
+  <td><%= @ad_client.company_name %></td>
+  </tr>
+  <tr>
+  <th>会社名（カナ）</th>
+  <td><%= @ad_client.company_name_kana %></td>
+  </tr>
+  <tr>
+  <th>郵便番号</th>
+  <td><%= @ad_client.postal_code %></td>
+  </tr>
+  <tr>
+  <th>住所</th>
+  <td><%= @ad_client.address %></td>
+  </tr>
+  <tr>
+  <th>メールアドレス</th>
+  <td><%= @ad_client.email %></td>
+  </tr>
+  <% if admin_signed_in? %>
+  <tr>
+  <th>ユーザーステータス</th>
+  <td>
+  <%= form_for @ad_client, url: ad_client_path(@ad_client), method: :patch do |f| %>
+  <%= f.radio_button :is_active, :true, checed:true %>
+  <%= f.label :有効 %>
+  <%= f.radio_button :is_active, :false %>
+  <%= f.label :無効 %>
+  <%= f.submit "更新", class: "btn btn-primary",style: "margin-left:13px"%>
+  <% end %>
+  </td>
+  </tr>
+  <% end %>
+  </table>
+  </div>
+
+
+  <div class = "col-xs-4">
+  <h4>所在地図</h4>
+  </div>
+  </div>
+  
+  <div class="row">
+  <div class="col-xs-3">
+  </div>
+  <%= link_to "前の画面へ戻る", ad_clients_path %>
+  </div>

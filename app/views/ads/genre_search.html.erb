@@ -1,0 +1,12 @@
+  <div class="row">
+  <div class="col-xs-3">
+  <!-- ジャンル一覧 -->
+  <%= render "ads/genre_templete", genres: @genres %>
+  </div>
+  <div class="col-xs-8">
+  <h3 class="genre-name">検索結果 > <%= @genre.genre_name %></h3>
+  <%= render 'ads/index', ads: @ads %>
+  </div>
+  </div>
+
+

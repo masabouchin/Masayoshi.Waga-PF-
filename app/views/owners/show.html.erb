@@ -1,0 +1,98 @@
+	<div class="row">
+		<div class="col-xs-3">
+			<% if ad_client_signed_in? %>
+				<%= render 'ad_clients/profile' , ad_client: current_ad_client %>
+				<%= render 'ad_clients/sidebar' , ad_client: current_ad_client %>
+			<% elsif driver_signed_in?%>
+				<%= render 'drivers/profile' , driver: current_driver %>
+				<%= render "drivers/sidebar", driver: current_driver %>
+			<% end %>
+		</div>
+		<div class="col-xs-9">
+			<div class="row">
+				<div class = "col-xs-6">
+				<%= attachment_image_tag @driver, :profile_image, fallback: "no_image.jpg", size:'230x170'  %><br>
+					<div id="follow_driver_<%= @driver.id %>">
+						<%= render "relationships/follow_driver", driver: @driver %>
+					</div>
+						<table class="table .table-borderless">
+							<tr id="follow_count_<%= @driver.id %>">
+								<%= render "relationships/follow_count_driver", driver: @driver %>
+							</tr>
+							<tr>
+								<th>名前</th>
+								<td><%= @driver.driver_name %></td>
+							</tr>
+							<tr>
+								<th>名前（カナ）</th>
+								<td><%= @driver.driver_name_kana %></td>
+							</tr>
+							<tr>
+								<th>広告活動地域</th>
+								<td><%= @driver.activity_area %></td>
+							</tr>
+							<tr>
+								<th>メールアドレス</th>
+								<td><%= @driver.email %></td>
+							</tr>
+							<% if admin_signed_in? %>
+							<tr>
+								<th>ユーザーステータス</th>
+								<td>
+									<%= form_for @driver, url: driver_path(@driver), method: :patch do |f| %>
+										<%= f.radio_button :is_active, :true, checed:true %>
+										<%= f.label :有効 %>
+										<%= f.radio_button :is_active, :false %>
+										<%= f.label :無効 %>
+										<%= f.submit "更新", class: "btn btn-primary",style: "margin-left:13px"%>
+									<% end %></td>
+							</tr>
+							<% end %>
+						</table>
+				</div>
+				<div class = "col-xs-6">
+					<h4>広告活動地域</h4>
+						<div id ="map"></div>
+							<script>
+								var map;
+								function initMap(){
+									var lat_lng ={ lat: <%= @driver.latitude %>, lng: <%= @driver.longitude %>}
+
+									map = new google.maps.Map(document.getElementById('map'), {
+										center: lat_lng,
+										zoom: 12,
+									});
+									marker = new google.map.Marker({
+										position: lat_lng,
+										map: map
+									});
+								}
+							</script>
+							<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=<%= ENV['GOOGLE_API_KEY'] %>&callback=initMap", async: true, defer: true)) ></script>
+				</div>
+			</div>
+
+		<div class="col-xs-12">
+			<table class="table">
+		     <h3>Car infomartion</h3>
+		      <thead>
+		        <tr>
+		          <td>メーカー</td>
+		          <td>車名</td>
+		          <td>ナンバープレート</td>
+		          <td>車台番号</td>
+		        </tr>
+		      </thead>
+		      <tbody>
+		       <% @car_informations.each do |c| %>
+		        <tr>
+		          <td><%= c.manufacturer_name %></td>
+		          <td><%= c.car_name %></td>
+		          <td><%= c.license_plate %></td>
+		          <td><%= c.flame_number %></td>
+		        </tr>
+		       <% end %>
+		      </tbody>
+	      </table>
+	  </div>
+	</div>

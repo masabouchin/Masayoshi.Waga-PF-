@@ -23,7 +23,6 @@ class Owner < ApplicationRecord
   attachment :driver_license_image
 
   has_many :transfer_informations
-  has_many :car_informations
   has_many :favorites, dependent: :destroy
 
   has_many :chats
