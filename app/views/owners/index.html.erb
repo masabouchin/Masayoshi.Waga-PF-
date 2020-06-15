@@ -4,11 +4,11 @@
 <%= render 'ad_clients/profile' , ad_client: current_ad_client %>
 <%= render 'ad_clients/sidebar' , ad_client: current_ad_client %>
 <% elsif driver_signed_in?%>
-<%= render 'drivers/profile' , driver: current_driver %>
-<%= render "drivers/sidebar", driver: current_driver %>
+<%= render 'owners/profile' , driver: current_owner %>
+<%= render "owners/sidebar", driver: current_owner %>
 <% end %>
 </div>
 <div class="col-xs-8">
-<%= render 'drivers/index', drivers: @drivers %>
+<%= render 'owners/index', owners: @owners %>
 </div>
 </div>

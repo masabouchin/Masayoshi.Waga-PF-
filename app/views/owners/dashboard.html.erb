@@ -1,12 +1,12 @@
     <div class="row">
     <div class="col-xs-3">
     <!-- プロフィール -->
-    <%= render "drivers/profile", driver: @driver %>
-    <%= render "drivers/sidebar", driver: @driver %>
+    <%= render "owners/profile", owner: @owner %>
+    <%= render "owners/sidebar", owner: @owner %>
     </div>
     <div class="col-xs-9">
     <!-- 運営からのメッセージ -->
-    <%= render 'layouts/message_from_admin', driver: @driver %>
+    <%= render 'layouts/message_from_admin', owner: @owner %>
 
     <!-- 取引広告の情報 -->
     <div class="deal-area">
@@ -14,7 +14,7 @@
     <% if @under_deal.present? %>
     <!-- 作業報告エリア -->
     <%= render 'under_deals/ad_info', ad: @ad %>
-    <%= render 'under_deals/flow_driver', { under_deal: @under_deal, deal_detail: @deal_detail, driver: @driver } %>
+    <%= render 'under_deals/flow_owner', { under_deal: @under_deal, deal_detail: @deal_detail, owner: @owner } %>
     <!-- メッセージエリア -->
     <div id="chat-templete" class="chat-area">
     <%= form_for (@message), url: under_deal_deal_messages_path(@under_deal) do |f| %>
@@ -24,7 +24,7 @@
     </div>
     <% end %>
     <% @messages.each do |message| %>
-    <% if message.user_type == 'driver' %>
+    <% if message.user_type == 'owner' %>
     <div class="message">
     <div id="icon" class="faceicon">
     <%= attachment_image_tag @under_deal.driver, :profile_image, fallback: "no_image.jpg", size:'90X90' %>
@@ -61,6 +61,8 @@
     <h5>広告を探してみましょう！！  <%= link_to "▶︎ 広告ページへ", ads_path %></h5>
     </div>
     <% end %>
+
+
     <!-- 取引一覧 -->
     <div class="past-deal">
     <table class="table">
@@ -86,6 +88,7 @@
     </tbody>
     </table>
     </div>
+    
     </div>
     </div>
     </div>

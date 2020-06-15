@@ -1,0 +1,19 @@
+    <div class="row">
+    <div class="col-md-3">
+    <!-- プロフィール -->
+    <% if ad_client_signed_in? %>
+    <%= render 'ad_clients/profile', ad_client: current_ad_client %>
+    <%= render 'ad_clients/sidebar', ad_client: current_ad_client %>
+    <% elsif driver_signed_in?%>
+    <%= render 'owners/profile', driver: current_owner %>
+    <%= render "owners/sidebar", driver: current_owner %>
+    <% end %>
+    </div>
+    <div class="col-xs-8">
+    <% if @model == 'owner' %>
+    <%= render 'owners/index', owners: @records %>
+    <% elsif @model == 'address' %>
+    <%= render 'owners/index', owners: @records %>
+    <% end %>
+    </div>
+    </div>

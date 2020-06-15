@@ -41,10 +41,19 @@ Rails.application.routes.draw do
   get :followings, :followers
   patch :is_active
   end
-  resources :car_informations, only:[:index, :create, :edit, :update, :destroy]
   resources :transfer_informations, only:[:index, :create, :edit, :update, :destroy]
   end
 
+  #広告主→オーナー様へのフォロー動作
+  post '/relationships/:ad_client_id', to: 'relationship_owners#create', as:'relationship_owners'
+  delete '/relationships/:ad_client_id', to: 'relationship_owners#destroy'
+  #オーナー様→広告主へのフォロー動作
+  post '/relationships/:owner_id',to: 'relationships#create',as:'relationships'
+  delete '/relationships/:owner_id',to: 'relationships#destroy'
+  #広告主検索
+  get '/search_ad_client', to: 'searchs#search_ad_client'
+  #オーナー様検索
+  get '/search_owner', to: 'searchs#search_owner'
 
   resources :deal_details, only:[:index, :create, :update]
   resources :completed_deals, only:[:index, :show, :update]

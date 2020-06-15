@@ -6,13 +6,13 @@
     </tr>
     <tr id="none-border">
     <td class="text-center">
-    <%= driver.driver_name %> さん
+    <%= owner.owner_name %> さん
     </td>
     </tr>
-    <% if current_driver == driver %>
+    <% if current_owner == owner %>
     <tr id="none-border">
     <td class="text-center">
-    <%= link_to 'ドライバー情報 編集',edit_driver_path(current_driver),class: "btn btn-primary" %>
+    <%= link_to 'ドライバー情報 編集',edit_owner_path(current_driver),class: "btn btn-primary" %>
     </td>
     </tr>
     <% end %>

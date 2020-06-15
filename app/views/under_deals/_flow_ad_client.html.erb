@@ -1,0 +1,92 @@
+      <% if under_deal.work_status == 'approval_pending' %>
+      <div class="col-xs-8 col-xs-offset-2">
+      <div class="message-box">
+      <h3>広告に応募がありました!</h3>
+      </div>
+      <div id="report-owner">
+      <%= render 'owners/profile' , owner: under_deal.owner %>
+      <p><%= link_to "プロフィールを確認する",owner_path(under_deal.owner.id),name: 'owner_check', class: "btn btn-primary" %></p>
+      <p>取引承認待ちです。こちらのオーナー様と広告契約を結びますか？</p>
+      <%= form_for under_deal, url:under_deal_path(under_deal), method: :patch do |f| %>
+      <%= f.submit "広告を依頼する", name:'accept', class: "btn btn-primary " %>
+      <%= f.submit "お断りする",name: 'refuse', class: "btn btn-danger" %>
+      <% end %>
+      </div>
+      </div>
+      <% end %>
+
+      <% if under_deal.work_status == 'refuse'%>
+      <div class="col-xs-8 col-xs-offset-2">
+      <div class="message-box">
+      <h3>オーナー様からの申し込みをお断りしました。</h3>
+      <p><%= link_to "マイページへ戻る",dashboard_ad_client_path(current_ad_client), class: "btn btn-sm btn-default" %></p>
+      </div>
+      </div>
+      <% end %>
+
+      <% if under_deal.work_status == 'waiting_kit'%>
+      <div class="col-xs-8 col-xs-offset-2">
+      <div class="message-box">
+      <h3>オーナー様へ広告キット及び商品を発送してください</h3>
+      </div>
+      </div>
+      <%= render 'under_deals/report_ad_client', under_deal: under_deal %>
+      <% end %>
+
+      <% if under_deal.work_status == 'sent_kit'%>
+      <div class="col-xs-8 col-xs-offset-2">
+      <div class="message-box">
+      <h3>発送通知をしました!<br>オーナー様からの広告キット及び商品受け取り完了連絡をお待ちください。</h3>
+      </div>
+      </div>
+      <%= render 'under_deals/report_ad_client', under_deal: under_deal %>
+      <% end %>
+
+      <% if under_deal.work_status == 'advertising'%>
+      <div class="col-xs-8 col-xs-offset-2">
+      <div class="message-box">
+      <h4>オーナー様から広告キット及び商品受け取り完了の報告がきました。<br>これからオーナー様が広告作業を行います。作業完了の報告をお待ちください。</h4>
+      </div>
+      </div>
+      <% end %>
+
+      <% if under_deal.work_status == 'completed'%>
+      <div class="col-xs-8 col-xs-offset-2">
+      <div class="message-box">
+      <h3>広告作業が完了しました！</h3>
+      <h4>広告作業代の振り込み作業を行ってください。お振込み完了後、評価をしてオーナー様に報告をしてください。</h4>
+      </div>
+      </div>
+      <%= render 'under_deals/report_ad_client', under_deal: under_deal %>
+      <% end %>
+
+      <% if under_deal.work_status == 'transferred'%>
+      <div class="col-xs-8 col-xs-offset-2">
+      <div class="message-box">
+      <h3>振り込み報告が完了しました！</h3>
+      <h4>オーナー様からの受け取り連絡待ちです。</h4>
+      </div>
+      </div>
+      <%= render 'under_deals/report_ad_client', under_deal: under_deal %>
+      <% end %>
+
+      <% if under_deal.work_status == 'rated'%>
+      <div class="col-xs-8 col-xs-offset-2">
+      <div class="message-box">
+      <h3>オーナー様から振り込み確認の連絡がきました！</h3>
+      <h4>オーナー様の評価をして取引を終了させてください。</h4>
+      </div>
+      </div>
+      <%= render 'under_deals/report_ad_client', under_deal: under_deal %>
+      <% end %>
+
+      <% if under_deal.work_status == 'finished'%>
+      <div class="col-xs-8 col-xs-offset-2">
+      <div class="message-box">
+      <h3>お疲れ様でした！</h3>
+      <h4>お取引きが完了しました。宣伝したい広告はありませんか？</h4>
+      <p><%= link_to "広告を依頼する",new_ad_client_ad_path(current_ad_client), class: "btn btn-sm btn-default" %></p>
+      </div>
+      </div>
+      <%= render 'under_deals/report_ad_client', under_deal: under_deal %>
+      <% end %>

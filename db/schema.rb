@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_10_080243) do
+ActiveRecord::Schema.define(version: 2020_06_15_061920) do
 
   create_table "ad_clients", force: :cascade do |t|
     t.string "email", null: false
@@ -46,6 +46,8 @@ ActiveRecord::Schema.define(version: 2020_06_10_080243) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "admin_name"
+    t.string "admin_name_kana"
     t.index ["email"], name: "index_admins_on_email", unique: true
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
   end
@@ -65,34 +67,41 @@ ActiveRecord::Schema.define(version: 2020_06_10_080243) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "clients", force: :cascade do |t|
-    t.string "email", null: false
-    t.string "encrypted_password", default: "", null: false
-    t.string "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.string "company_name", null: false
-    t.string "company_name_kana", null: false
-    t.string "ceo_name", null: false
-    t.string "ceo_name_kana", null: false
-    t.string "postal_code", null: false
-    t.string "address", null: false
-    t.string "telephone_number", null: false
-    t.string "profile_image_id"
-    t.string "registry_image_id", null: false
-    t.boolean "terms", default: false, null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["email"], name: "index_clients_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_clients_on_reset_password_token", unique: true
-  end
-
   create_table "contacts", force: :cascade do |t|
     t.string "name", null: false
     t.string "company_name"
     t.string "telephone_number", null: false
     t.string "email", null: false
     t.text "content", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "work_status", default: 0, null: false
+  end
+
+  create_table "deal_details", force: :cascade do |t|
+    t.integer "under_deal_id", null: false
+    t.integer "payment_amount"
+    t.integer "transfer_status", default: 0, null: false
+    t.string "bank_name", null: false
+    t.string "branch_name", null: false
+    t.integer "account_type", null: false
+    t.integer "account_number", null: false
+    t.string "account_name", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "deal_messages", force: :cascade do |t|
+    t.text "message", null: false
+    t.integer "user_type", null: false
+    t.integer "under_deal_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "favorites", force: :cascade do |t|
+    t.integer "owner_id", null: false
+    t.integer "ad_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -105,6 +114,16 @@ ActiveRecord::Schema.define(version: 2020_06_10_080243) do
   end
 
   create_table "homes", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  
+
+  create_table "information", force: :cascade do |t|
+    t.string "title", null: false
+    t.text "content", null: false
+    t.integer "viewer_type", default: 0, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -127,13 +146,48 @@ ActiveRecord::Schema.define(version: 2020_06_10_080243) do
     t.boolean "terms", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.float "latitude"
+    t.float "longitude"
+    t.string "activity_area"
+    t.integer "user_status", default: 0, null: false
     t.index ["email"], name: "index_owners_on_email", unique: true
     t.index ["reset_password_token"], name: "index_owners_on_reset_password_token", unique: true
   end
 
-  create_table "users", force: :cascade do |t|
+  create_table "relationship_owners", force: :cascade do |t|
+    t.integer "follower_id", null: false
+    t.integer "followed_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "relationships", force: :cascade do |t|
+    t.integer "follower_id", null: false
+    t.integer "followed_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "transfer_informations", force: :cascade do |t|
+    t.integer "owner_id", null: false
+    t.string "bank_name", null: false
+    t.string "branch_name", null: false
+    t.integer "account_type", null: false
+    t.integer "account_number", null: false
+    t.string "account_name", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "under_deals", force: :cascade do |t|
+    t.integer "ad_id", null: false
+    t.integer "owner_id", null: false
+    t.integer "work_status", limit: 1, default: 0, null: false
+    t.string "installation_image_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+ 
 
 end

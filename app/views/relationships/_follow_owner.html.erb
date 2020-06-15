@@ -1,0 +1,8 @@
+  <% if ad_client_signed_in? %>
+  <% if current_ad_client.following(owner) %>
+  <%= link_to 'フォローを外す',relationships_path(owner), method: :delete, remote: true %>
+  <% else %>
+  <%= link_to 'フォローする',relationships_path(owner), method: :POST, remote: true %>
+  <% end %>
+  <% end %>
+
