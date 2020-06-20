@@ -74,3 +74,9 @@ gem 'enum_help'
 gem 'ed25519'
 gem 'bcrypt_pbkdf'
 gem 'geocoder'
+
+
+gem 'dotenv-rails'
+group :production do
+  gem 'mysql2'
+end
