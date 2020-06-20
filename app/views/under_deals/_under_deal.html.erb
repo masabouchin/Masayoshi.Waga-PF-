@@ -6,7 +6,7 @@
       <!-- 作業報告エリア -->
       <% if ad_client_signed_in? %>
       <%= render 'under_deals/flow_ad_client', under_deal: under_deal %>
-      <% elsif driver_signed_in?  %>
+      <% elsif owner_signed_in?  %>
       <%= render 'under_deals/flow_owner', { under_deal: under_deal, deal_detail: deal_detail, owner: owner } %>
       <% end %>
       </div>

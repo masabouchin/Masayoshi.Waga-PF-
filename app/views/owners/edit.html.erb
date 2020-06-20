@@ -2,7 +2,7 @@
     <div class = "col-xs-6">
     <h4>プロフィール情報</h4>
     <%= form_for(@owner) do |f| %>
-    <%= attachment_image_tag @owner, :profile_image, fallback: "no_image.jpg", size:'230x170'  %><br>
+    <%= attachment_image_tag @owner, :profile_image, fallback: "no_image.jpg",class: "image-circle", size:'230x170'  %><br>
     <%= f.attachment_field :profile_image %><br>
 
     <table class="table .table-borderless">
@@ -30,9 +30,12 @@
     <th><%= f.label :email %></th>
     <td><%= f.text_field :email, class: "form-control form-control-sm" %></td>
     </tr>
+    <th><%= f.label :salon_name %></td>
+    <td><%= f.text_field :salon_name, autofocus: true, autocomplete:"",placeholder: "サロン名を入力", class: "form-control" %></td>
+    </tr>
     <tr>
-    <th><%= f.label :activity_area %></th>
-    <td>(例)東京都港区<%= f.text_field :activity_area, autofocus: true, placeholder:"都道府県と市町村名までを入力", class: "form-control"%></td>
+    <th><%= f.label :driver_license_image %></td>
+    <td><%= f.file_field :driver_license_image, id:"upload_file" %></td>
     </tr>
     <tr>
     <th></th>
@@ -42,31 +45,13 @@
     </table>
     </div>
     <div class = "col-xs-6">
-    <h4>広告拠点</h4>
-    <div id="map"></div>
-    <script>
-    var map;
-    function initMap(){
-    var lat_lng ={ lat: <%= @owner.latitude %>, lng: <%= @owner.longitude %>}
-
-    map = new google.maps.Map(document.getElementById('map'), {
-    center: lat_lng,
-    zoom: 12,
-    });
-    marker = new google.map.Marker({
-    position: lat_lng,
-    map: map
-    })
-    }
-    </script>
-    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=<%= ENV['GOOGLE_API_KEY'] %>&callback=initMap", async: true, defer: true)) ></script>
     <table class="table .table-borderless">
     <tr>
     <th>振込先情報</th>
     <% if  @owner.transfer_informations.present?  %>
     <td><%= link_to "編集する", owner_transfer_informations_path(@owner.id) , class: "btn btn-primary",data: {"turbolinks" => false} %></td>
     <% else %>
-    <td><%= link_to "登録する", owner_transfer_informations_path(@owner.id) , class: "btn btn-primary",data: {"turbolinks" => false} %>
+    <td><%= link_to "登録する", owner_transfer_informations_path(@owner.id) , class: "btn btn-primary",data: {"turbolinks" => false} %></td>
     <p class="alert">口座情報が登録されていません。</p></td>
     <% end %>
     </tr>

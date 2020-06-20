@@ -1,3 +1,3 @@
 class Genre < ApplicationRecord
-  has many :ads
+  has_many :ads
 end

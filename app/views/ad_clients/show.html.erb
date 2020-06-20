@@ -4,8 +4,8 @@
   <%= render 'ad_clients/profile' , ad_client: current_ad_client %>
   <%= render 'ad_clients/sidebar' , ad_client: current_ad_client %>
   <% elsif owner_signed_in?%>
-  <%= render 'owners/profile' , driver: current_owner %>
-  <%= render "owners/sidebar", driver: current_owner %>
+  <%= render 'owners/profile' , owner: current_owner %>
+  <%= render "owners/sidebar", owner: current_owner %>
   <% end %><br>
   </div>
 
@@ -18,7 +18,7 @@
   </div>
   <table class="table .table-borderless">
   <tr id="follow_count_<%= @ad_client.id %>">
-  <%= render "relationship_drivers/follow_count_ad_client", ad_client: @ad_client %>
+  <%= render "relationship_owners/follow_count_ad_client", ad_client: @ad_client %>
   </tr>
   <tr>
   <th>会社名</th>

@@ -21,7 +21,7 @@
     <% if ad_client_signed_in? %>
     <div class="search-form" style="margin-top: 30px;">
     <%= form_tag(search_ad_client_path, method: :get) do %>
-    <%= select_tag 'search[model]', options_for_select({"ドライバー名" => "driver","都市名" => "address"}) %>
+    <%= select_tag 'search[model]', options_for_select({"オーナー様" => "owner","都市名" => "address"}) %>
     <%= text_field_tag 'search[content]' %>
     <%= submit_tag 'Search',class: "fa fa-search" %>
     <% end %>
@@ -44,7 +44,7 @@
   <div class=nav_bar>
   <nav>
   <ul class="nav navbar-nav navbar-right">
-   <% if client_signed_in? %>
+   <% if ad_client_signed_in? %>
    <li><%= link_to "フォローオーナー",followings_ad_client_path(current_ad_client) %></li>
    <li><%= link_to "お知らせ",informations_path %></li>
    <li><%= link_to "マイぺージ",dashboard_ad_client_path(current_ad_client) %></li>
@@ -53,7 +53,7 @@
    <% elsif owner_signed_in? %>
    <li><%= link_to "お気に入り",favorite_search_ad_path(current_owner) %></li>
    <li><%= link_to "お知らせ",informations_path %></li>
-   <li><%= link_to "マイぺージ",dashboard_driver_path(current_owner) %></li>
+   <li><%= link_to "マイぺージ",dashboard_owner_path(current_owner) %></li>
    <li><%= link_to "お問い合わせ",new_contact_path %></li>
    <li><%= link_to "ログアウト",destroy_owner_session_path, method: :delete %></li>
    <% elsif admin_signed_in?%>
@@ -87,7 +87,7 @@
     <ul class="footer-menu">
     <li><%= link_to "Home", root_path,:style =>"color:white;" %></li>
     <li>｜</li>
-    <li><%= link_to "About Ader",homes_about_path, :style =>"color:white;" %></li>
+    <li><%= link_to "About OSIPer!!",homes_about_path, :style =>"color:white;" %></li>
     <li>｜</li>
     <li>service</li>
     <li>｜</li>

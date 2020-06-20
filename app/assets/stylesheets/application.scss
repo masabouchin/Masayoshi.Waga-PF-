@@ -18,7 +18,6 @@
  @import 'bootstrap-datetimepicker'; 
 
 
-
  .bg-slider {
   width: 100vw;
   height: 1000px;
@@ -43,7 +42,7 @@
 footer{
   width: 100%;
   height: 150px;
-  margin-top: 200px;
+  margin-top: 300px;
   background-color: #121212;
   color: #f5f5f5;
   text-align: center;
@@ -65,4 +64,609 @@ footer p{
   font-size: large;
   color: white;
   line-height: 300px;
+}
+.center{
+  text-align: center;
+}
+.image{
+  margin-left: 438px;
+  padding-bottom: 100px;
+}
+
+
+
+/* サイドバー */
+.sidebar-area{
+  text-align: center;
+}
+
+.sidebar {
+  width: 100%;
+  margin-left: 10px;
+  padding: 0;
+  list-style-type: none;
+  background-color: #eeeeee;
+}
+
+.side-menu a{
+  display: block;
+  padding: 8px 16px;
+  text-decoration: none;
+  font-size: 16px;
+  color: #000000;
+  margin:5px;
+}
+.side-menu {
+  text-align: center;
+}
+
+.side-menu a.active {
+  color: #ffffff;
+  background-color: #da3c41;
+}
+
+.side-menu a:hover:not(.active) {
+  color: #ffffff;
+  background-color: #1b2538;
+}
+
+
+/* 検索フィーム*/
+
+
+/* 見出しの下の間隔を開ける */
+h3{
+  margin-bottom:30px;
+}
+
+/* 運営側からのメッセージ */
+.notice{
+  color: coral;
+  font-style: oblique;
+}
+
+/* テーブルの先頭の色を変更 */
+thead,{
+  background-color: #dcdcdc;
+}
+
+/* テーブルの間隔を開ける */
+th, tr, td {
+  margin-bottom: 17px;
+}
+
+/* リンク用のボタン */
+.link-button{
+}
+
+/* イメージhover時の動作 */
+.img_wrap{
+  width: 200px;
+  height: 180px;
+  margin: 20px auto 0;
+  transition-duration: 0.5s;
+}
+
+.img_wrap img{
+  width: 100%;
+  cursor: pointer;
+}
+
+.img_wrap:hover{
+  box-shadow: 10px 10px 10px rgba(0,0,0,0.5);
+  transform: translateY(-5px);
+  transition-duration: 0.5s;
+}
+
+/* プロフィール写真 */
+.image-circle{
+  width:  200px;
+  height: 190px;
+  border-radius: 50%;
+  position: center;
+  filter: drop-shadow(10px 2px 2px #aaa);
+}
+
+/* Google Map*/
+#map {
+  width:420px;
+  height:350px;
+  margin-bottom:20px;
+}
+
+/* テーブルのボーダー削除 */
+#none-border td,
+#none-border tr{
+	border-style: none;
+}
+
+#deal-box{
+  witdh: 120px;
+}
+
+/* チャットレイアウト オーナー様 */
+.message {
+  width: 100%;
+  margin: 1.5em 0;
+  overflow: hidden;
+}
+.message .faceicon {
+  float: left;
+  margin-right: -90px;
+  width: 100px;
+}
+.message .faceicon img{
+  width: 100%;
+  height: auto;
+  border: solid 2px #696969;
+  border-radius: 50%;
+}
+.message .chatting {
+  width: 100%;
+}
+
+
+
+
+.says {
+  display: inline-block;
+  position: relative; 
+  margin: 5px 0 0 105px;
+  padding: 17px 13px;
+  border-radius: 12px;
+  color: #333;/*テキストを黒にする*/
+  background: #fff;
+  border: 2px solid #1b2538;
+}
+.says:after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 18px;
+  left: -24px;
+  border: 12px solid transparent;
+  border-right: 12px solid #1b2538;
+}
+.say-data {
+  float: left;
+  padding: 18px 0px 0px 0px;
+  color: #000;
+  font-size: 12px;
+}
+.says p {
+  margin: 0;
+  padding: 0;
+}
+
+/* チャットレイアウト広告主 */
+.message2 {
+  width: 100%;
+  margin: 1.5em 0;
+  overflow: hidden;
+}
+.message2 .faceicon2 {
+  float: right;
+  margin-left: -90px;
+  width: 100px;
+}
+.message2 .faceicon2 img{
+  width: 100%;
+  height: auto;
+  border: solid 2px #696969;
+  border-radius: 50%;
+}
+.message2 .chatting {
+  width: 100%;
+}
+.says2 {
+  display: inline-block;
+  position: relative;
+  float: right;
+  margin: 5px 105px;
+  padding: 17px 13px;
+  border-radius: 12px;
+  color: #fff;
+  background: #1b2538;
+}
+.says2:after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 18px;
+  right: -24px;
+  border: 12px solid transparent;
+  border-left: 12px solid #1b2538;
+}
+.say-data2 {
+  float: right;
+  padding: 18px 0px 0px 0px;
+  color: #fff;
+  font-size: 12px;
+}
+.says p {
+  margin: 0;
+  padding: 0;
+}
+
+/* チャットレイアウト メッセージエリア */
+.chat-message {
+  width: calc(100% - 75px);/*常に送信ボタンの横幅を引いたサイズに動的に計算*/
+  line-height: 16px;
+  height: 80px;
+  padding: 14px 6px 0px 6px;/*文字がテキストエリアの中心になる様に隙間調整*/
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  text-align: left;
+  box-shadow: 2px 2px 4px 0px rgba(0,0,0,0.2) inset;/*内側に影を入れてテキストエリアらしくした*/
+  box-sizing: border-box;/*paddingとborderの要素の高さと幅の影響をなくす（要素に高さと幅を含める）*/
+}
+.chat-btn {
+  width: 72px;
+  height: 38px;
+  font-size: 16px;
+  padding-bottom: 10px;
+  float: right;
+  color: #fff;
+  font-weight: bold;
+  background: #bcbcbc;
+  text-align: center;
+  border: 1px solid #bbb;
+  border-radius: 4px;
+}
+.chat-btn:hover {
+  background: #1b2538;
+  color: #fff;
+  cursor: pointer;
+}
+/* 黒色のタグ */
+
+.tag {
+ background:#000;
+ color:#fff;
+ padding:6px;
+ margin-bottom: 30px;
+ border-radius:20px;
+ text-decoration:none;
+ font-size:13px;
+}
+
+/* フォームサイズ */
+.input-small{
+  width: 130px;
+}
+
+.input-medium{
+  width: 230px;
+}
+
+#input-area{
+  height: 400px;
+}
+
+.btn-default{
+  background-color: #696969;
+  color: #f5f5f5;
+}
+
+.btn-default:hover{
+  background-color: #000000;
+  color: #f5f5f5;
+}
+
+/* エラーメッセージ */
+.alert {
+  color:#262626; 
+  background:#FFEBE8;
+  border:2px solid #990000;
+  margin:10px 0px;
+  padding:12px; font-weight:850;
+  }
+
+/* adminからのメッセージ */
+.message-box{
+  padding: 0.5em 1em;
+  background: -moz-linear-gradient(#ffb03c, #ff708d);
+  background: -webkit-linear-gradient(#ff3c4c, #ff708d);
+  background: linear-gradient(to right, #803cff, #ff708d);
+  color: #FFF;
+  margin-bottom:30px
+}
+
+/* 新規広告ボタン*/
+.ad-button-area{
+  text-align: center;
+  margin-bottom:20px;
+}
+
+
+
+/* Submitボタン */
+$thick : 3px;
+$pad : 0.7em;
+$extra : calc(#{$pad} * 1.2);
+$color : #f26522;
+
+.entry {
+  background: #2d2d2d;
+  
+  a {
+    color: white;
+    padding: $pad $extra;
+    display: inline-block;
+    border: $thick solid transparent;
+    position: relative;
+    font-size: 1.5em;
+    cursor: pointer;
+    letter-spacing: 0.07em;
+
+    .text {
+      // padding: 0 0.3em;
+      font-family: proxima-nova, monospace;
+      transform: translate3d(0,$pad,0);
+      color: white;
+      background: #2d2d2d;
+      display: block;
+      transition: transform 0.4s cubic-bezier(.2,0,0,1) 0.4s;
+    }
+
+    &:after {
+      position: absolute;
+      content: '';
+      bottom: -$thick;
+      left: $extra;
+      right: $extra;
+      height: $thick;
+      background: $color;
+      // z-index: -1;
+      transition: 
+        transform 0.8s cubic-bezier(1,0,.37,1) 0.2s,
+        right 0.2s cubic-bezier(.04,.48,0,1) 0.6s,
+        left 0.4s cubic-bezier(.04,.48,0,1) 0.6s;
+      transform-origin: left;
+    }
+
+  }
+
+  .line {
+    position: absolute;
+    background: $color;
+
+    &.-right,
+    &.-left {
+      width: $thick;
+      bottom: -$thick;
+      top: -$thick;
+      transform: scale3d(1,0,1);
+    }  
+
+    &.-top,
+    &.-bottom {
+      height: $thick;
+      left: -$thick;
+      right: -$thick;
+      transform: scale3d(0,1,1);
+    }
+
+    &.-right {
+      right: -$thick;
+      transition: transform 0.1s cubic-bezier(1,0,.65,1.01) 0.23s;
+      transform-origin: top;
+    }
+
+    &.-top {
+      top: -$thick;
+      transition: transform 0.08s linear 0.43s;
+      transform-origin: left;
+    }
+
+    &.-left {
+      left: -$thick;
+      transition: transform 0.08s linear 0.51s;
+      transform-origin: bottom;
+    }
+
+    &.-bottom {
+      bottom: -$thick;
+      transition: transform 0.3s cubic-bezier(1,0,.65,1.01);
+      transform-origin: right;
+    }  
+  }
+
+  a:hover,
+  a:active {
+
+    .text {
+      transform: translate3d(0,0,0);
+      transition: transform 0.6s cubic-bezier(.2,0,0,1) 0.4s;
+    }
+
+    &:after {
+      transform: scale3d(0,1,1);
+      right: -$thick;
+      left: -$thick;
+      transform-origin: right;
+      transition: 
+        transform 0.2s cubic-bezier(1,0,.65,1.01) 0.17s,
+        right 0.2s cubic-bezier(1,0,.65,1.01),
+        left 0s 0.3s;
+    }
+
+    .line {
+      transform: scale3d(1,1,1);
+
+      &.-right {
+        transition: transform 0.1s cubic-bezier(1,0,.65,1.01) 0.2s;
+        transform-origin: bottom;
+      }
+
+      &.-top {
+        transition: transform 0.08s linear 0.4s;
+        transform-origin: right;
+      }
+
+      &.-left {
+        transition: transform 0.08s linear 0.48s;
+        transform-origin: top;
+      }
+
+      &.-bottom {
+        transition: transform 0.5s cubic-bezier(0,.53,.29,1) 0.56s;
+        transform-origin: left;
+      }
+    }
+  }
+}
+
+/* 質問ボタン */
+$thick : 3px;
+$pad : 0.7em;
+$extra : calc(#{$pad} * 1.2);
+$color : #f26522;
+
+
+.question {
+  background: #2d2d2d;
+
+  b {
+    color: white;
+    padding: $pad $extra;
+    display: inline-block;
+    border: $thick solid transparent;
+    position: relative;
+    font-size: 1.5em;
+    cursor: pointer;
+    letter-spacing: 0.07em;
+
+    .text {
+      // padding: 0 0.3em;
+      font-family: proxima-nova, monospace;
+      transform: translate3d(0,$pad,0);
+      color: #fff;
+      font-size: 18px;
+      background: #2d2d2d;
+      display: block;
+      transition: transform 0.4s cubic-bezier(.2,0,0,1) 0.4s;
+    }
+
+    &:after {
+      position: absolute;
+      content: '';
+      bottom: -$thick;
+      left: $extra;
+      right: $extra;
+      height: $thick;
+      background: $color;
+      // z-index: -1;
+      transition: 
+        transform 0.8s cubic-bezier(1,0,.37,1) 0.2s,
+        right 0.2s cubic-bezier(.04,.48,0,1) 0.6s,
+        left 0.4s cubic-bezier(.04,.48,0,1) 0.6s;
+      transform-origin: left;
+    }
+
+  }
+
+  .line {
+    position: absolute;
+    background: $color;
+
+    &.-right,
+    &.-left {
+      width: $thick;
+      bottom: -$thick;
+      top: -$thick;
+      transform: scale3d(1,0,1);
+    }  
+
+    &.-top,
+    &.-bottom {
+      height: $thick;
+      left: -$thick;
+      right: -$thick;
+      transform: scale3d(0,1,1);
+    }
+
+    &.-right {
+      right: -$thick;
+      transition: transform 0.1s cubic-bezier(1,0,.65,1.01) 0.23s;
+      transform-origin: top;
+    }
+
+    &.-top {
+      top: -$thick;
+      transition: transform 0.08s linear 0.43s;
+      transform-origin: left;
+    }
+
+    &.-left {
+      left: -$thick;
+      transition: transform 0.08s linear 0.51s;
+      transform-origin: bottom;
+    }
+
+    &.-bottom {
+      bottom: -$thick;
+      transition: transform 0.3s cubic-bezier(1,0,.65,1.01);
+      transform-origin: right;
+    }  
+  }
+
+  b:hover,
+  b:active {
+
+    .text {
+      transform: translate3d(0,0,0);
+      transition: transform 0.6s cubic-bezier(.2,0,0,1) 0.4s;
+    }
+
+    &:after {
+      transform: scale3d(0,1,1);
+      right: -$thick;
+      left: -$thick;
+      transform-origin: right;
+      transition: 
+        transform 0.2s cubic-bezier(1,0,.65,1.01) 0.17s,
+        right 0.2s cubic-bezier(1,0,.65,1.01),
+        left 0s 0.3s;
+    }
+
+    .line {
+      transform: scale3d(1,1,1);
+
+      &.-right {
+        transition: transform 0.1s cubic-bezier(1,0,.65,1.01) 0.2s;
+        transform-origin: bottom;
+      }
+
+      &.-top {
+        transition: transform 0.08s linear 0.4s;
+        transform-origin: right;
+      }
+
+      &.-left {
+        transition: transform 0.08s linear 0.48s;
+        transform-origin: top;
+      }
+
+      &.-bottom {
+        transition: transform 0.5s cubic-bezier(0,.53,.29,1) 0.56s;
+        transform-origin: left;
+      }
+    }
+  }
+}
+
+/*ページネーション*/
+.pagination li a {
+  border: none;
+  color: #5c5c5c;
+  margin: 0px 3px;
+}
+
+.pagination .active a{
+  background: #93c9ff;
+  border-radius:15px;
+}
+.pagination li a:hover{
+  border-radius: 15px;
 }

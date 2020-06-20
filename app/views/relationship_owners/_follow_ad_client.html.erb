@@ -1,4 +1,4 @@
-<% if driver_signed_in? %>
+<% if owner_signed_in? %>
   <% if current_owner.following(ad_client) %>
     <%= link_to 'フォローを外す', relationship_owners_path(ad_client), method: :delete, remote: :true %>
   <% else %>

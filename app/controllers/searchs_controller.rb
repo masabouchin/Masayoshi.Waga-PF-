@@ -19,9 +19,9 @@ def search_for(model, content)
   elsif model == 'ad_client'
     AdClient.where('company_name LIKE ?', '%'+content+'%')
   elsif  model == 'owner'
-    Driver.where('owner_name LIKE ?', '%'+content+'%')
+    Owner.where('owner_name LIKE ?', '%'+content+'%')
   elsif model == 'address'
-    Driver.where('address LIKE ?', '%'+content+'%')
+    Owner.where('address LIKE ?', '%'+content+'%')
   end
 end
 

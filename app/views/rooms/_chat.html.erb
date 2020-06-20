@@ -1,0 +1,27 @@
+      <div id="chats">
+      <% @chats.each do |chat| %>
+      <% if chat.user_type == 'owner' %>
+      <div class="message">
+      <div class="chatting">
+      <div class="says">
+      <p><%= chat.message %></p>
+      <div class="say-data">
+      <%= chat.created_at.to_s(:datetime_jp) %>
+      </div>
+      </div>
+      </div>
+      </div>
+      <% else %>
+      <div class="message2">
+      <div class="chatting2">
+      <div class="says2">
+      <p><%= chat.message %></p>
+      <div class="say-data2">
+      <%= chat.created_at.to_s(:datetime_jp) %>
+      </div>
+      </div>
+      </div>
+      </div>
+      <% end %>
+      <% end %>
+      </div>

@@ -1,7 +1,7 @@
     <div class="sidebar-area">
     <table class="sidebar">
     <tr>
-    <td class="side-menu"><%= link_to "お気に入り広告", favorite_search_ad_path(current_driver)  %></td>
+    <td class="side-menu"><%= link_to "お気に入り広告", favorite_search_ad_path(current_owner)  %></td>
     </tr>
     <tr>
     <td class="side-menu"><%= link_to  "広告を探す", ads_path   %></td>
@@ -10,7 +10,7 @@
     <td class="side-menu"><%= link_to  "広告主一覧", ad_clients_path   %></td>
     </tr>
     <tr>
-    <td class="side-menu"><%= link_to "取引一覧", dashboard_driver_path(current_driver)  %></td>
+    <td class="side-menu"><%= link_to "取引一覧", dashboard_owner_path(current_owner)  %></td>
     </tr>
     <tr>
     <td class="side-menu"><%= link_to "問い合せ", new_contact_path  %></td>

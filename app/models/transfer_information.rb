@@ -6,7 +6,7 @@ class TransferInformation < ApplicationRecord
   validates :account_name, presence: true, format: { with: /\A[\p{katakana}\p{blank}ー－]+\z/, message: 'はカタカナで入力して下さい。'}
 
 
-  belongs_to :driver
+  belongs_to :owner
 
   enum account_type:{ ordinary: 0, checking: 1 }
 

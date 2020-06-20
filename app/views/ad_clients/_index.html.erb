@@ -17,6 +17,6 @@
     <div class="text-center"><%= paginate ad_clients, class: "paginate" %></div>
     <% if ad_client_signed_in? %>
     <%= link_to "マイページへ戻る", dashboard_ad_client_path(current_ad_client) %>
-    <% elsif driver_signed_in?%>
-    <%= link_to "トップページに戻る", dashboard_driver_path(current_driver) %>
+    <% elsif owner_signed_in?%>
+    <%= link_to "トップページに戻る", dashboard_owner_path(current_owner) %>
     <% end %>

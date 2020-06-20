@@ -78,7 +78,8 @@ Rails.application.routes.draw do
   end
 
   resources :ads, only:[:index, :show]do
-  resources :summary_items, only:[:index, :show, :create]
+  resources :chats, only: [:index, :create]
+  resources :rooms, only:[:index, :show, :create]
   member do
   get :genre_search
   get :favorite_search

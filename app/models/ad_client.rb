@@ -4,7 +4,6 @@ class AdClient < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  validates_acceptance_of :terms, allow_nil: false, message: "※会員登録には利用規約への同意が必要です。", on: :create
   validates :company_name, presence: true
   validates :company_name_kana, presence: true,format: { with: /\A[\p{katakana}\p{blank}ー－]+\z/, message: 'はカタカナで入力して下さい。'}
   validates :ceo_name, presence: true
@@ -38,13 +37,13 @@ class AdClient < ApplicationRecord
   geocoded_by :address
   after_validation :geocode
 
-  def follow(driver_id)
-    follower.create(followed_id: driver_id)
+  def follow(owner_id)
+    follower.create(followed_id: owner_id)
   end
-  def unfollow(driver_id)
-    follower.find_by(followed_id: driver_id).destroy
+  def unfollow(owner_id)
+    follower.find_by(followed_id: owner_id).destroy
   end
-  def following(driver_id)
-    follower.find_by(followed_id: driver_id)
+  def following(owner_id)
+    follower.find_by(followed_id: owner_id)
   end
 end

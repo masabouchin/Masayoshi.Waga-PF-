@@ -4,20 +4,13 @@ class Owner < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  validates_acceptance_of :terms, allow_nil: false, message: "※会員登録には利用規約への同意が必要です。", on: :create
-  validates :driver_name, presence: true
-  validates :driver_name_kana, presence: true,format: { with: /\A[\p{katakana}\p{blank}ー－]+\z/, message: 'はカタカナで入力して下さい。'}
+  validates :owner_name, presence: true
+  validates :owner_name_kana, presence: true,format: { with: /\A[\p{katakana}\p{blank}ー－]+\z/, message: 'はカタカナで入力して下さい。'}
   validates :postal_code, presence: true
   validates :address, presence: true
   validates :telephone_number, presence: true
   validates :email, presence: true
-  validates :activity_area, presence: true
-
-  validates :driver_license_image, presence: {
-  message: -> (rec, data){
-  I18n.t('activemodel.errors.message.not_upload')
-  }
-  }
+  
 
   attachment :profile_image
   attachment :driver_license_image

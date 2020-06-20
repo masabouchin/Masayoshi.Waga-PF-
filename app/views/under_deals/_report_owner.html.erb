@@ -41,7 +41,7 @@
       <%= form_for under_deal, url:under_deal_path(under_deal), method: :patch do |f| %>
       <%= fields_for deal_detail, url:under_deal_path(under_deal), method: :patch do |d| %>
       <%= d.label :transfer_informations, "振込先の銀行口座を指定する" %>
-      <%= collection_select(:detail, :transfer_information_id, driver.transfer_informations.order("id DESC"),:id,:full_info) %>
+      <%= collection_select(:detail, :transfer_information_id, owner.transfer_informations.order("id DESC"),:id,:full_info) %>
       <% end %>
       <%= f.submit "広告作業の完了報告", name:'completed', class: "btn btn-primary " %>
       <% end %>
@@ -54,7 +54,7 @@
       </tr>
       </table>
       <% if under_deal.work_status == 'advertising' %>
-      <% if driver.transfer_informations.blank? %>
+      <% if owner.transfer_informations.blank? %>
       <p class="notice">口座情報が未登録です。<br>「オーナー様情報 編集」から登録してください。</p>
       <% end %>
       <% end %>

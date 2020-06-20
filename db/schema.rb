@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_15_061920) do
+ActiveRecord::Schema.define(version: 2020_06_16_043519) do
 
   create_table "ad_clients", force: :cascade do |t|
     t.string "email", null: false
@@ -67,6 +67,14 @@ ActiveRecord::Schema.define(version: 2020_06_15_061920) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "chats", force: :cascade do |t|
+    t.integer "room_id", null: false
+    t.integer "user_type", null: false
+    t.text "message", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "contacts", force: :cascade do |t|
     t.string "name", null: false
     t.string "company_name"
@@ -118,7 +126,13 @@ ActiveRecord::Schema.define(version: 2020_06_15_061920) do
     t.datetime "updated_at", null: false
   end
 
-  
+  create_table "infomations", force: :cascade do |t|
+    t.string "title", null: false
+    t.text "content", null: false
+    t.integer "viewer_type", default: 0, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "information", force: :cascade do |t|
     t.string "title", null: false
@@ -168,6 +182,21 @@ ActiveRecord::Schema.define(version: 2020_06_15_061920) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "rooms", force: :cascade do |t|
+    t.integer "ad_client_id", null: false
+    t.integer "owner_id", null: false
+    t.integer "ad_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "tags", force: :cascade do |t|
+    t.string "name"
+    t.integer "ad_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "transfer_informations", force: :cascade do |t|
     t.integer "owner_id", null: false
     t.string "bank_name", null: false
@@ -188,6 +217,9 @@ ActiveRecord::Schema.define(version: 2020_06_15_061920) do
     t.datetime "updated_at", null: false
   end
 
- 
+  create_table "users", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
 end

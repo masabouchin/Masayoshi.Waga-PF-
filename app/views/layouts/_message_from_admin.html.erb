@@ -1,0 +1,23 @@
+  <!-- オーナー様ー向けメッセージ -->
+  <% if owner_signed_in? %>
+  <% if owner.is_active == false %>
+  <div class="alert">
+    <h4 class="notice">現在、会員サービスが停止中です。<br>詳しくは運営までお問い合わせください。</p>
+  </div>
+  <% end %>
+  <% if owner.transfer_informations.blank? %>
+  <div class="says">
+    <h4 class="notice">・口座情報が未登録です。<br>
+      <p>お取引を始める前に「オーナー様情報 編集」から登録してください。</p>
+  </div>
+  <% end %>
+  <% end %>
+  
+  <!-- 広告主向けメッセージ -->
+  <% if ad_client_signed_in? %>
+  <% if ad_client.is_active == false %>
+  <div class="alert">
+    <h4 class="notice">現在、会員サービスが停止中です。<br>詳しくは運営までお問い合わせください。</p>
+  </div>
+  <% end %>
+  <% end %>

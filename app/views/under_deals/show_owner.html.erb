@@ -1,8 +1,8 @@
       <div class="row">
       <div class="col-xs-2">
       <!-- プロフィール -->
-      <%= render 'owners/profile' , driver: current_owner %><br><!-- プロフィール -->
-      <%= render 'owners/sidebar', driver: current_owner %><!-- サイドバー -->
+      <%= render 'owners/profile' , owner: current_owner %><br><!-- プロフィール -->
+      <%= render 'owners/sidebar', owner: current_owner %><!-- サイドバー -->
       </div>
       <div class="col-xs-9 col-xs-offset-1">
       <h4>過去の広告詳細</h4>
@@ -15,10 +15,10 @@
       <h4 class="alert">メッセージはありません</h4>
       <% end %>
       <% @messages.each do |message| %>
-      <% if message.user_type == 'driver' %>
+      <% if message.user_type == 'owner' %>
       <div class="message">
       <div id="icon" class="faceicon">
-      <%= attachment_image_tag @under_deal.driver, :profile_image, fallback: "no_image.jpg", size:'90X90' %>
+      <%= attachment_image_tag @under_deal.owner, :profile_image, fallback: "no_image.jpg", size:'90X90' %>
       </div>
       <div class="chatting">
       <div class="says">

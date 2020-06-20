@@ -4,7 +4,7 @@
     <% owners.each do |owner| %>
     <td>
     <%= link_to owner_path(owner.id) do %>
-    <%= attachment_image_tag driver,:profile_image, fallback: "no_image.jpg", size:'200x160',class: "img_wrap" %><br>
+    <%= attachment_image_tag owner,:profile_image, fallback: "no_image.jpg", size:'200x160',class: "img_wrap" %><br>
     <%= owner.owner_name %><% end %><br>
     <%= owner.owner_name_kana %><br>
     </td>
@@ -17,6 +17,6 @@
     <div class="text-center"><%= paginate owners,class: "paginate" %></div>
     <% if ad_client_signed_in? %>
     <%= link_to "マイページへ戻る", dashboard_ad_client_path(current_ad_client) %>
-    <% elsif driver_signed_in?%>
+    <% elsif owner_signed_in?%>
     <%= link_to "トップページに戻る", dashboard_owner_path(current_owner) %>
     <% end %>

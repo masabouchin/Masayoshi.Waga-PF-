@@ -10,7 +10,7 @@ class UnderDealsController < ApplicationController
     @message = DealMessage.new()
     @messages = @under_deal.deal_messages
     @deal_detail = DealDetail.new(deal_detail_params)
-    @driver = current_driver
+    @owner = current_owner
   end
 
   def show_owner
@@ -91,7 +91,7 @@ class UnderDealsController < ApplicationController
 
   private
   def under_deal_params
-	params.require(:under_deal).permit(:ad_id, :driver_id, :work_status, :installation_image)
+	params.require(:under_deal).permit(:ad_id, :owner_id, :work_status, :installation_image)
 	end
 
   def message_params

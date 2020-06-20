@@ -3,5 +3,5 @@ class Information < ApplicationRecord
   validates :content,presence: true
   validates :viewer_type,presence: true
 
-  enum viewer_type: { both: 0, ad_client: 1, driver: 2 }
+  enum viewer_type: { both: 0, ad_client: 1, owner: 2 }
 end

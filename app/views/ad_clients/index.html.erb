@@ -4,8 +4,8 @@
   <%= render 'ad_clients/profile', ad_client: current_ad_client %>
   <%= render 'ad_clients/sidebar', ad_client: current_ad_client %>
   <% elsif owner_signed_in?%>
-  <%= render 'owners/profile', driver: current_owner %>
-  <%= render "owners/sidebar", driver: current_owner %>
+  <%= render 'owners/profile', owner: current_owner %>
+  <%= render "owners/sidebar", owner: current_owner %>
   <% end %>
   </div>
   <div class="col-xs-8 col-xs-offset-1">
