@@ -68,6 +68,16 @@
     </div>
     </div>
 
+      <div class="col-xs-3">
+    <% if ad_client_signed_in? %>
+    <%= render 'ad_clients/profile' , ad_client: current_ad_client %>
+    <%= render 'ad_clients/sidebar' , ad_client: current_ad_client %>
+    <% elsif owner_signed_in?%>
+    <%= render 'owners/profile' , owner: current_owner %>
+    <%= render "owners/sidebar", owner: current_owner %>
+    <% end %>
+    </div>
+
     
     </div>
     </div>

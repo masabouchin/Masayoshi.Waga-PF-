@@ -67,6 +67,11 @@ ActiveRecord::Schema.define(version: 2020_06_16_043519) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "application_helpers", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "chats", force: :cascade do |t|
     t.integer "room_id", null: false
     t.integer "user_type", null: false
@@ -186,6 +191,8 @@ ActiveRecord::Schema.define(version: 2020_06_16_043519) do
     t.float "longitude"
     t.string "activity_area"
     t.integer "user_status", default: 0, null: false
+    t.float "longitude"
+    t.float "latitude"
     t.index ["email"], name: "index_owners_on_email", unique: true
     t.index ["reset_password_token"], name: "index_owners_on_reset_password_token", unique: true
   end

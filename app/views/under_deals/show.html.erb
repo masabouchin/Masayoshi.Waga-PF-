@@ -7,7 +7,7 @@
       </div>
       <%= render 'ad_clients/sidebar', ad_client: current_ad_client %><!-- サイドバー -->
       </div>
-
+ 
       <div class="col-xs-8 col-xs-offset-1">
       <% if @under_deal.work_status == 'finished'%>
       <h4>過去の取引詳細</h4>
@@ -60,4 +60,14 @@
 
       </div>
       </div>
+
+      <div class="col-xs-3 text-center">
+      <!-- プロフィール -->
+      <%= render 'ad_clients/profile' , ad_client: current_ad_client %><!-- プロフィール -->
+      <div class="ad-button-area">
+      <%= link_to "新規広告依頼", new_ad_client_ad_path(current_ad_client), data: {"turbolinks" => false }, class: "btn btn-default btn-lg ad-button" %>
+      </div>
+      <%= render 'ad_clients/sidebar', ad_client: current_ad_client %><!-- サイドバー -->
+      </div>
+
       </div>

@@ -20,8 +20,8 @@ def search_for(model, content)
     AdClient.where('company_name LIKE ?', '%'+content+'%')
   elsif  model == 'owner'
     Owner.where('owner_name LIKE ?', '%'+content+'%')
-  elsif model == 'address'
-    Owner.where('address LIKE ?', '%'+content+'%')
+  elsif model == 'owner'
+    Owner.where('salon_name LIKE ?', '%'+content+'%')
   end
 end
 

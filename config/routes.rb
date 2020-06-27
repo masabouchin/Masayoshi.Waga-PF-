@@ -45,8 +45,8 @@ Rails.application.routes.draw do
   end
 
   #広告主→オーナー様へのフォロー動作
-  post '/relationships/:ad_client_id', to: 'relationship_owners#create', as:'relationship_owners'
-  delete '/relationships/:ad_client_id', to: 'relationship_owners#destroy'
+  post '/relationships/owners/:ad_client_id', to: 'relationship_owners#create', as:'relationship_owners'
+  delete '/relationships/owners/:ad_client_id', to: 'relationship_owners#destroy'
   #オーナー様→広告主へのフォロー動作
   post '/relationships/:owner_id',to: 'relationships#create',as:'relationships'
   delete '/relationships/:owner_id',to: 'relationships#destroy'

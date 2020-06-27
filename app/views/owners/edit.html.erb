@@ -1,5 +1,5 @@
     <div class="row">
-    <div class = "col-xs-6">
+    <div class = "col-xs-8">
     <h4>プロフィール情報</h4>
     <%= form_for(@owner) do |f| %>
     <%= attachment_image_tag @owner, :profile_image, fallback: "no_image.jpg",class: "image-circle", size:'230x170'  %><br>
@@ -7,34 +7,34 @@
 
     <table class="table .table-borderless">
     <tr>
-    <th><%= f.label :owner_name %></th>
+    <th><%= f.label :お名前 %></th>
     <td><%= f.text_field :owner_name, class: "form-control form-control-sm" %></td>
     </tr>
     <tr>
-    <th><%= f.label :owner_name_kana %></th>
+    <th><%= f.label :お名前（カナ） %></th>
     <td><%= f.text_field :owner_name_kana, class: "form-control form-control-sm" %></td>
     </tr>
     <tr>
-    <th><%= f.label :postal_code %></th>
+    <th><%= f.label :郵便番号 %></th>
     <td><%= f.text_field :postal_code, class: "form-control form-control-sm" %></td>
     </tr>
     <tr>
-    <th><%= f.label :address %></th>
+    <th><%= f.label :住所 %></th>
     <td><%= f.text_field :address, class: "form-control form-control-sm" %></td>
     </tr>
     <tr>
-    <th><%= f.label :telephone_number %></th>
+    <th><%= f.label :電話番号 %></th>
     <td><%= f.text_field :telephone_number, class: "form-control form-control-sm" %></td>
     </tr>
     <tr>
-    <th><%= f.label :email %></th>
+    <th><%= f.label :メールアドレス %></th>
     <td><%= f.text_field :email, class: "form-control form-control-sm" %></td>
     </tr>
-    <th><%= f.label :salon_name %></td>
+    <th><%= f.label :サロン名 %></td>
     <td><%= f.text_field :salon_name, autofocus: true, autocomplete:"",placeholder: "サロン名を入力", class: "form-control" %></td>
     </tr>
     <tr>
-    <th><%= f.label :driver_license_image %></td>
+    <th><%= f.label :本人確認書類 %></td>
     <td><%= f.file_field :driver_license_image, id:"upload_file" %></td>
     </tr>
     <tr>
@@ -44,7 +44,8 @@
     <% end %>
     </table>
     </div>
-    <div class = "col-xs-6">
+    
+    <div class = "col-xs-11">
     <table class="table .table-borderless">
     <tr>
     <th>振込先情報</th>

@@ -18,8 +18,8 @@
     <th><h4><%= @ad.title %></h4></th>
     </tr>
     <tr>
-    <td><span class="ad-fee"><%= convert_fee(@ad.ad_fee) %></span>
-    <div id="favorites_buttons_<%= @ad.id %>"><%= render partial: 'favorites/favorite',locals: { ad: @ad } %></div>
+    <td><span class="ad-fee"><%= @ad.ad_fee %></span>
+    <div id="favorites_buttons_<%= @ad.id %>"><%= render partial: 'favorite/favorite',locals: { ad: @ad } %></div>
     </td>
     </tr>
     <tr>
@@ -55,4 +55,15 @@
     </div>
     <span class="link-button" ><%= link_to "広告一覧へ戻る", ad_client_ads_path(current_ad_client)  %>
     </div>
+   <div class="col-xs-2">
+    <!-- プロフィール -->
+    <% if ad_client_signed_in? %>
+    <%= render 'ad_clients/profile', ad_client: current_ad_client %>
+    <%= render 'ad_clients/sidebar', ad_client: current_ad_client %>
+    <% elsif owner_signed_in?%>
+    <%= render 'owners/profile', owner: current_owner %>
+    <%= render "owners/sidebar", owner: current_owner %>
+    <% end %><br>
+    </div>
+
     </div>

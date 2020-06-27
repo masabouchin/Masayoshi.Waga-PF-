@@ -2,7 +2,7 @@ class FavoriteController < ApplicationController
   before_action :authenticate_owner!
   def create
   @ad = Ad.find(params[:ad_id])
-  favorite = current_owner.favorites.new(ad_id: @ad.id)
+  favorite = current_owner.favorites.build(ad_id: @ad.id)
   favorite.save
   end
 

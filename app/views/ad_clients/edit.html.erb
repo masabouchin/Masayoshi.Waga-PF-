@@ -1,6 +1,6 @@
     <div class="container">
     <div class="row">
-    <div class = "col-xs-6">
+    <div class = "col-xs-7">
     <%= form_for(@ad_client) do |f| %>
     <%= attachment_image_tag @ad_client, :profile_image, fallback: "no_image.jpg", size:'230x170'  %><br>
     <%= f.attachment_field :profile_image, class: "user_image" %><br>

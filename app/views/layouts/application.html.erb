@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="UTF-8">
     <title>OSIPer</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <% meta{content: "width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0", name: "viewport"} %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -21,7 +22,7 @@
     <% if ad_client_signed_in? %>
     <div class="search-form" style="margin-top: 30px;">
     <%= form_tag(search_ad_client_path, method: :get) do %>
-    <%= select_tag 'search[model]', options_for_select({"オーナー様" => "owner","都市名" => "address"}) %>
+    <%= select_tag 'search[model]', options_for_select({"オーナー様" => "owner","サロン名" => "salon_name"}) %>
     <%= text_field_tag 'search[content]' %>
     <%= submit_tag 'Search',class: "fa fa-search" %>
     <% end %>
@@ -98,5 +99,6 @@
     </footer>
     </div>
     </div>
+    
   </body>
 </html>

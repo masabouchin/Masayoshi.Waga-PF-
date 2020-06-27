@@ -18,7 +18,7 @@
     <div id="favorites_buttons_<%= ad.id %>">
     <%= render partial:'favorites/favorite', locals: { ad: ad} %>
     </div>
-    <%= convert_fee(ad.ad_fee) %><br>
+    ¥<%= ad.ad_fee %><br>
     <%= ad.heading %>
     </td>
     <% i = i + 1 %>
@@ -34,4 +34,13 @@
     <%= link_to "マイページに戻る", dashboard_owner_path(current_owner) %>
     <% end %>
     </div>
+
+    <div class="col-xs-3">
+    <%= render 'ad_clients/profile', ad_client: current_ad_client %>
+    <div class="ad-button-area">
+    <%= link_to "新規広告依頼", new_ad_client_ad_path(current_ad_client), data: {"turbolinks" => false }, class: "btn btn-lg btn-default ad-button" %>
+    </div>
+    <%= render 'ad_clients/sidebar', ad_client: current_ad_client %>
+    </div>
+    
     </div>

@@ -42,7 +42,7 @@
     </tr>
     <tr>
     <th>ジャンル</th>
-    <th>AIタグ</th>
+    <th>　　　　</th>
     </tr>
     <tr>
     <td><%= @ad.genre.genre_name %></td>
@@ -55,6 +55,20 @@
     </div>
     <%= render "under_deals/apply_ad", under_deal: @under_deal, ad: @ad, room: @room %>
     </div>
-    <span class="link-button" ><%= link_to "前の画面に戻る", ads_path  %>
+    <h4><span class="link-button" ><%= link_to "前の画面に戻る", ads_path  %></h4>
     </div>
+
+        <div class="col-xs-3">
+    <!-- プロフィール -->
+    <% if ad_client_signed_in? %>
+    <%= render 'ad_clients/profile', ad_client: current_ad_client %>
+    <%= render 'ad_clients/sidebar', ad_client: current_ad_client %>
+    <% elsif owner_signed_in?%>
+    <%= render 'owners/profile', owner: current_owner %>
+    <%= render "owners/sidebar", owner: current_owner %>
+    <% end %><br>
+    <!-- ジャンル一覧 -->
+    <%= render "ads/genre_templete", genres: @genres %>
+    </div>
+    
     </div>

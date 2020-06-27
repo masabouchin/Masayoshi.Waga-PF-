@@ -1,8 +1,6 @@
     <div class="row">
-    <div class="col-lg-1">
-    </div>
-    <div class="col-lg-6">
-    <h3>  Follow list</h3>
+    <div class="col-xs-9">
+    <h2>  Follow list</h2>
     <table class="table">
     <thead>
     <tr>
@@ -14,12 +12,23 @@
     <tbody>
     <% @followings.each do |owner| %>
     <tr>
-    <td><%= attachment_image_tag owner, :profile_image, fallback: "no-image-mini.jpg",size:'80x80' %></td>
+    <td><%= attachment_image_tag owner, :profile_image, fallback: "no-image-mini.jpg",size:'100x100' %></td>
     <td><%= owner.owner_name %></td>
     <td><%= link_to "Show", owner, class: "owners_#{owner.id}" %></td>
     </tr>
     <%end %>
     </tbody>
     </table>
+    </div>
+
+       <div class="col-xs-2">
+    <!-- プロフィール -->
+    <% if ad_client_signed_in? %>
+    <%= render 'ad_clients/profile', ad_client: current_ad_client %>
+    <%= render 'ad_clients/sidebar', ad_client: current_ad_client %>
+    <% elsif owner_signed_in?%>
+    <%= render 'owners/profile', owner: current_owner %>
+    <%= render "owners/sidebar", owner: current_owner %>
+    <% end %>
     </div>
     </div>

@@ -17,6 +17,8 @@
     </tr>
     </tbody>
     </table>
+    <% if admin_signed_in? %>
     <%= link_to "編集",edit_information_path(@information) %>
+    <% end %>
     </div>
     </div>

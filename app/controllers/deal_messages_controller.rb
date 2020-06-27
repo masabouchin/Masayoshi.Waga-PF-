@@ -3,7 +3,7 @@ class DealMessagesController < ApplicationController
     @under_deal = UnderDeal.find(params[:under_deal_id])
     @message = DealMessage.new(message_params)
     if owner_signed_in?
-      @message.user_type = 'owner '
+      @message.user_type = 'owner'
     elsif ad_client_signed_in?
       @message.user_type = 'ad_client'
     end

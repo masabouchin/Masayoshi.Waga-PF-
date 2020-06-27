@@ -1,4 +1,9 @@
 <div class="row">
+
+<div class="col-xs-8">
+<%= render 'owners/index', owners: @owners %>
+</div>
+
 <div class="col-xs-3">
 <% if ad_client_signed_in? %>
 <%= render 'ad_clients/profile' , ad_client: current_ad_client %>

@@ -10,7 +10,7 @@ class Owner < ApplicationRecord
   validates :address, presence: true
   validates :telephone_number, presence: true
   validates :email, presence: true
-  
+  validates :salon_name, presence: true
 
   attachment :profile_image
   attachment :driver_license_image

@@ -1,17 +1,17 @@
       <!-- 広告からの許可待ち画面 -->
       <% if under_deal.work_status == 'approval_pending' %>
-      <div class="col-xs-8 col-xs-offset-2">
+      <div class="col-xs-12 col-xs-offset-1">
       <div class="message-box">
-      <h3>お申し込みが完了しました！</h3>
+      <h1>お申し込みが完了しました！</h1>
       <h4>広告主の承認待ちです。<br>何か質問があったら、メッセージしてみよう</h4>
       </div>
       </div>
       <% end %>
       <!-- 申し込み拒否された場合の画面 -->
       <% if under_deal.work_status == 'refuse'%>
-      <div class="col-xs-8 col-xs-offset-2">
+      <div class="col-xs-12 col-xs-offset-1">
       <div class="message-box">
-      <h3>誠に残念ですが、こちらのお申し込みは承認されませんでした。</h3>
+      <h1>誠に残念ですが、こちらのお申し込みは承認されませんでした。</h1>
       <h4>別の広告を探してみましょう！</h4>
       <p><%= link_to "他の広告を探す",ads_path, class: "btn btn-sm btn-default" %></p>
       </div>
@@ -20,9 +20,9 @@
 
       <!-- 広告キットの発送待ちの画面 -->
       <% if under_deal.work_status == 'waiting_kit'%>
-      <div class="col-xs-8 col-xs-offset-2">
+      <div class="col-xs-12 col-xs-offset-1">
       <div class="message-box">
-      <h3>おめでとうございます！<br>お申し込みが承認されました</h3>
+      <h1>おめでとうございます！<br>お申し込みが承認されました</h1>
       <h4>広告キット及び商品の発送準備中です。<br>発送後、広告主から連絡が入ります。<br>今しばらくお待ちください。</h4>
       </div>
       </div>
@@ -31,9 +31,9 @@
       <!-- 広告キット発送後の画面 -->
       <% if under_deal.work_status == 'sent_kit'%>
       <div class="row">
-      <div class="col-xs-8 col-xs-offset-2">
+      <div class="col-xs-12 col-xs-offset-1">
       <div class="message-box">
-      <h3>広告キットが発送されました</h3>
+      <h1>広告キットが発送されました</h1>
       <h4>到着後、サロンへの広告業務をお願いします。</h4>
       </div>
       </div>
@@ -44,9 +44,9 @@
       <!-- 広告作業中の画面 -->
       <% if under_deal.work_status == 'advertising'%>
       <div class="row">
-      <div class="col-xs-8 col-xs-offset-2">
+      <div class="col-xs-12 col-xs-offset-1">
       <div class="message-box">
-      <h3>準備完了です！</h3>
+      <h1>準備完了です！</h1>
       <h4>広告作業をしながら新サービスや商品を利用して意見交換をしてみましょう!メンバー様との素敵な時間としてご活用ください。<br>広告作業が完了したら、作業完了の報告を送ってください。</h4>
       </div>
       </div>
@@ -57,7 +57,7 @@
       <!-- 広告作業完了後の画面 -->
       <% if under_deal.work_status == 'completed'%>
       <div class="row">
-      <div class="col-xs-8 col-xs-offset-2">
+      <div class="col-xs-12 col-xs-offset-1">
       <div class="message-box">
       <h3>お疲れ様でした！</h3>
       <h4>広告作業代の振り込み完了後、広告主から連絡が入ります。最後に評価をして広告作業を完了してください。</h4>
@@ -70,9 +70,9 @@
       <!-- 振り込み完了連絡後の画面 -->
       <% if under_deal.work_status == 'transferred'%>
       <div class="row">
-      <div class="col-xs-8 col-xs-offset-2">
+      <div class="col-xs-12 col-xs-offset-1">
       <div class="message-box">
-      <h3>振り込み完了の連絡が来ました！</h3>
+      <h1>振り込み完了の連絡が来ました！</h1>
       <h4>入金確認をしたら、最後に評価をして広告作業を完了してください。</h4>
       </div>
       </div>
@@ -83,9 +83,9 @@
       <!-- 振り込み完了連絡後の画面 -->
       <% if under_deal.work_status == 'rated'%>
       <div class="row">
-      <div class="col-xs-8 col-xs-offset-2">
+      <div class="col-xs-11 col-xs-offset-1">
       <div class="message-box">
-      <h3>お疲れ様でした。お取引き完了です。</h3>
+      <h1>お疲れ様でした。お取引き完了です。</h1>
       <h4>さぁ次の広告を探しにいきましょう！</h4>
       <p><%= link_to "広告を探す",ads_path, class: "btn btn-sm btn-default" %></p>
       </div>
@@ -95,9 +95,9 @@
       <% end %>
       <% if under_deal.work_status == 'finished'%>
       <div class="row">
-      <div class="col-xs-8 col-xs-offset-2">
+      <div class="col-xs-11 col-xs-offset-1">
       <div class="message-box">
-      <h3>この取引きは完了しています。</h3>
+      <h1>この取引きは完了しています。</h1>
       <h4>さぁ次の広告を探しにいきましょう！</h4>
       <p><%= link_to "広告を探す",ads_path, class: "btn btn-sm btn-default" %></p>
       </div>

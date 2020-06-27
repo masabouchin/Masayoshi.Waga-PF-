@@ -7,6 +7,7 @@
     <%= attachment_image_tag owner,:profile_image, fallback: "no_image.jpg", size:'200x160',class: "img_wrap" %><br>
     <%= owner.owner_name %><% end %><br>
     <%= owner.owner_name_kana %><br>
+    サロン名『<%= owner.salon_name %>』
     </td>
     <% i = i + 1 %>
     <% if i % 3 == 0 %>
