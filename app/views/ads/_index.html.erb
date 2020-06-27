@@ -9,7 +9,7 @@
     <div id="favorites_buttons_<%= ad.id %>">
     <%= render partial:'favorites/favorite', locals: { ad: ad} %>
     </div>
-    <%= ad.ad_fee %><br>
+    ¥<%= ad.ad_fee %><br>
     <%= ad.heading %>
     </td>
     <% i = i + 1 %>
@@ -19,7 +19,7 @@
     <% end %>
   </table>
 
-  <div class="text-center"><%= paginate ads, class: "paginate" %></div>
+ 
   <% if ad_client_signed_in? %>
   <%= link_to "マイページへ戻る", dashboard_ad_client_path(current_ad_client) %>
   <% elsif owner_signed_in?%>

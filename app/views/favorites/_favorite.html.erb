@@ -2,10 +2,12 @@
   <% if ad.favorited_by?(current_owner) %>
   <%= link_to ad_favorites_path(ad.id),method: :delete, remote: true do %>
   <span class="glyphicon glyphicon-heart" aria-hidden="true" style="color: red; font-size: 30px; margin-top: 7px"></span>
+  <%= ad.favorites.count%>
   <% end %>
   <% else %>
   <%= link_to ad_favorites_path(ad.id), method: :post, remote: true do %>
   <span class="glyphicon glyphicon-heart-empty" aria-hidden="true" style="color: grey; font-size: 30px; margin-top: 7px"></span>
+  <%= ad.favorites.count%>
   <% end %>
   <% end %>
   <% end %>

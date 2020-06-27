@@ -1,10 +1,4 @@
     <div class="row">
-    <div class="col-xs-3 col-xs-offset-5">
-    <!-- プロフィール -->
-    <%= render "owners/profile", owner: @owner %>
-    <%= render "owners/sidebar", owner: @owner %>
-    </div>
-    
     <div class="col-xs-9">
 
         <!-- 運営からのメッセージ -->
@@ -57,7 +51,6 @@
         <div class="message-box">
         <h4>現在、取引中の広告はありません。</h4>
         <h5>広告を探してみましょう！！  <%= link_to "▶︎ 広告ページへ", ads_path %></h5>
-    </div>
          <% end %>
     </div>
     <!-- 取引一覧 -->
@@ -84,7 +77,6 @@
         <% end %>
         </tbody>
         </table>
-    </div>
     </div>
     </div>
     

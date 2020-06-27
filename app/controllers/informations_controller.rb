@@ -11,6 +11,9 @@ class InformationsController < ApplicationController
   def create
     @information = Information.new(information_params)
     @information.save
+    @information.errors.full_messages.each do |msg|
+      p msg
+    end
     redirect_to informations_path
   end
   #アドミンお知らせ詳細ページ
@@ -30,6 +33,6 @@ class InformationsController < ApplicationController
 
   private
   def information_params
-    params.permit(:title, :viewer_type, :content)
+    params.require(:information).permit(:title, :viewer_type, :content)
   end
 end

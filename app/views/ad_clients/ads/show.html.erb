@@ -1,14 +1,5 @@
     <div class="row">
-    <div class="col-xs-3">
-    <!-- プロフィール -->
-    <% if ad_client_signed_in? %>
-    <%= render 'ad_clients/profile', ad_client: current_ad_client %>
-    <%= render 'ad_clients/sidebar', ad_client: current_ad_client %>
-    <% elsif owner_signed_in?%>
-    <%= render 'owners/profile', owner: current_owner %>
-    <%= render "owners/sidebar", owner: current_owner %>
-    <% end %><br>
-    </div>
+ 
     <div class="col-xs-9">
     <div class="ad-area">
     <div class="ad-card">
@@ -18,8 +9,8 @@
     <th><h4><%= @ad.title %></h4></th>
     </tr>
     <tr>
-    <td><span class="ad-fee"><%= @ad.ad_fee %></span>
-    <div id="favorites_buttons_<%= @ad.id %>"><%= render partial: 'favorite/favorite',locals: { ad: @ad } %></div>
+    <td><span class="ad-fee">¥<%= @ad.ad_fee %></span>
+    <div id="favorites_buttons_<%=  @ad.id %>"><%= render partial: 'favorites/favorite',locals: { ad: @ad } %></div>
     </td>
     </tr>
     <tr>
@@ -40,7 +31,7 @@
     </tr>
     <tr>
     <th>ジャンル</th>
-    <th>AIタグ</th>
+    <th>　　　　</th>
     </tr>
     <tr>
     <td><%= @ad.genre.genre_name %></td>

@@ -16,7 +16,6 @@
 //= require jquery_ujs
 //= require_tree .
 //= require bootstrap-sprockets
-//= require_tree.
 
 //背景画像をスライダーにする
 $(function() {

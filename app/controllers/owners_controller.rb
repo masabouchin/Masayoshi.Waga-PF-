@@ -52,7 +52,7 @@ class OwnersController < ApplicationController
   
   private
   def owner_params
-    params.require(:owner).permit(:owner_name,:owner_name_kana, :profile_image, :postal_code, :address, :telephone_number, :is_active, :salon_name, :driver_license_image)
+    params.require(:owner).permit(:owner_name,:owner_name_kana, :profile_image, :postal_code, :address, :telephone_number, :is_active, :salon_name, :driver_license_image, :latitude, :longitude)
   end
   
   def message_params

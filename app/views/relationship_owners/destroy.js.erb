@@ -1,0 +1,2 @@
+$('#follow_ad_client_<%= @ad_client.id %>').html("<%= j(render partial: 'relationship_owners/follow_ad_client', locals: {ad_client: @ad_client}) %>");
+$("#follow_count_<%= @ad_client.id %>").html("<%= j(render partial: 'relationship_owners/follow_count_ad_client', locals: {ad_client: @ad_client}) %>");

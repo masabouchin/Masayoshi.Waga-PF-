@@ -1,5 +1,5 @@
       <% if under_deal.work_status == 'approval_pending' %>
-      <div class="col-xs-8 col-xs-offset-2">
+      <div class="col-xs-11 col-xs-offset-1">
       <div class="message-box">
       <h3>広告に応募がありました!</h3>
       </div>
@@ -16,7 +16,7 @@
       <% end %>
 
       <% if under_deal.work_status == 'refuse'%>
-      <div class="col-xs-8 col-xs-offset-2">
+      <div class="col-xs-11 col-xs-offset-1">
       <div class="message-box">
       <h3>オーナー様からの申し込みをお断りしました。</h3>
       <p><%= link_to "マイページへ戻る",dashboard_ad_client_path(current_ad_client), class: "btn btn-sm btn-default" %></p>
@@ -25,7 +25,7 @@
       <% end %>
 
       <% if under_deal.work_status == 'waiting_kit'%>
-      <div class="col-xs-8 col-xs-offset-2">
+      <div class="col-xs-11 col-xs-offset-1">
       <div class="message-box">
       <h3>オーナー様へ広告キット及び商品を発送してください</h3>
       </div>
@@ -34,7 +34,7 @@
       <% end %>
 
       <% if under_deal.work_status == 'sent_kit'%>
-      <div class="col-xs-8 col-xs-offset-2">
+      <div class="col-xs-11 col-xs-offset-1">
       <div class="message-box">
       <h3>発送通知をしました!<br>オーナー様からの広告キット及び商品受け取り完了連絡をお待ちください。</h3>
       </div>
@@ -51,7 +51,7 @@
       <% end %>
 
       <% if under_deal.work_status == 'completed'%>
-      <div class="col-xs-8 col-xs-offset-2">
+      <div class="col-xs-11 col-xs-offset-1">
       <div class="message-box">
       <h3>広告作業が完了しました！</h3>
       <h4>広告作業代の振り込み作業を行ってください。お振込み完了後、評価をしてオーナー様に報告をしてください。</h4>
@@ -61,7 +61,7 @@
       <% end %>
 
       <% if under_deal.work_status == 'transferred'%>
-      <div class="col-xs-8 col-xs-offset-2">
+      <div class="col-xs-11 col-xs-offset-1">
       <div class="message-box">
       <h3>振り込み報告が完了しました！</h3>
       <h4>オーナー様からの受け取り連絡待ちです。</h4>
@@ -71,7 +71,7 @@
       <% end %>
 
       <% if under_deal.work_status == 'rated'%>
-      <div class="col-xs-8 col-xs-offset-2">
+      <div class="col-xs-11 col-xs-offset-1">
       <div class="message-box">
       <h3>オーナー様から振り込み確認の連絡がきました！</h3>
       <h4>オーナー様の評価をして取引を終了させてください。</h4>
@@ -81,7 +81,7 @@
       <% end %>
 
       <% if under_deal.work_status == 'finished'%>
-      <div class="col-xs-8 col-xs-offset-2">
+      <div class="col-xs-11 col-xs-offset-1">
       <div class="message-box">
       <h3>お疲れ様でした！</h3>
       <h4>お取引きが完了しました。宣伝したい広告はありませんか？</h4>

@@ -14,7 +14,6 @@ class AdsController < ApplicationController
       @owner = current_owner
       @ad_client = current_ad_client
       @under_deal = UnderDeal.new
-      @room = Room.find_by(ad_id: @ad.id,owner_id: current_owner.id)
     end
   
     # ジャンル検索画面

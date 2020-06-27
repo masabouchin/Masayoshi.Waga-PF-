@@ -10,7 +10,7 @@ class AdClientsController < ApplicationController
       @finish_deals = deal_all.includes(:ad,:deal_messages,:owner).references(:ad,:deal_messages,:owner).where(work_status: 'finished')
       @rooms = Room.includes(:ad).where(ad_client: @ad_client)
     end
-    # 非ログインユーザー/ドライバーから見た広告主一覧
+    # 非ログインユーザー/オーナー様から見た広告主一覧
     def index
       @ad_client = current_ad_client
       @owner = current_owner

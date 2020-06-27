@@ -1,0 +1,2 @@
+$("#follow_owner_<%= @owner.id %>").html("<%= j(render partial: 'relationships/follow_owner', locals: {owner: @owner}) %>");
+$("#follow_count_<%= @owner.id %>").html("<%= j(render partial: 'relationships/follow_count_owner', locals: {owner: @owner}) %>");

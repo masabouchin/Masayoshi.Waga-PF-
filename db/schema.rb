@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_16_043519) do
+ActiveRecord::Schema.define(version: 2020_06_27_065909) do
 
   create_table "ad_clients", force: :cascade do |t|
     t.string "email", null: false
@@ -187,8 +187,6 @@ ActiveRecord::Schema.define(version: 2020_06_16_043519) do
     t.boolean "terms", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.float "latitude"
-    t.float "longitude"
     t.string "activity_area"
     t.integer "user_status", default: 0, null: false
     t.float "longitude"

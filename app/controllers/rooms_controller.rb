@@ -20,7 +20,7 @@ class RoomsController < ApplicationController
 
   def create
     @ad = Ad.find(params[:ad_id])
-    @room = Room.create(ad_id: @ad.id, owner._id: current_owner..id, ad_client_id: @ad.ad_client_id)
+    @room = Room.create(ad_id: @ad.id, owner_id: current_owner.id, ad_client_id: @ad.ad_client_id)
     redirect_to ad_room_path(@ad.id,@room.id)
   end
   

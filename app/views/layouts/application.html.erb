@@ -5,7 +5,7 @@
     <title>OSIPer</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <% meta{content: "width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0", name: "viewport"} %>
+    < meta{content: "width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0", name: "viewport"} >
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -95,10 +95,8 @@
     <li><%= link_to "Contact Us",new_contact_path,:style =>"color:white;" %></li>
     </ul>
     <h3><%= link_to image_tag('logo.jpg',width:'80'),homes_index_path %>&emsp;OSIPer!!</h3>
-    </nav>
     </footer>
     </div>
     </div>
-    
   </body>
 </html>
