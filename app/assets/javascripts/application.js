@@ -20,7 +20,7 @@
 //背景画像をスライダーにする
 $(function() {
  $('.bg-slider').bgSwitcher({
- images: ['/image6.jpg','/assets/image16.jpg','/assets/image15.jpg','/assets/image14.jpg','/assets/image9.jpg','/assets/image7.jpg','/assets/image8.jpg','/assets/image12.jpg','/assets/image13.jpg','/assets/image10.jpg','/assets/image11.jpg'],   //画像を呼び込むにはこの記述しかない
+ images: ['/image6.jpg','/image16.jpg','/image15.jpg','/image14.jpg','/image9.jpg','/image7.jpg','/image8.jpg','/image12.jpg','/image13.jpg','/image10.jpg','/image11.jpg'],   //画像を呼び込むにはこの記述しかない
  interval: 10000,
  loop: true,
  shuffle: true,
