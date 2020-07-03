@@ -31,7 +31,7 @@
     </tr>
     <tr>
     <th>ジャンル</th>
-    <th>　　　　</th>
+    <th>AIタグ</th>
     </tr>
     <tr>
     <td><%= @ad.genre.genre_name %></td>
@@ -42,6 +42,7 @@
     </tr>
     </table>
     <span class="link-button" ><%= link_to "編集する", edit_ad_client_ad_path(@ad.ad_client.id,@ad.id)  %>
+    <%= link_to "削除する", ad_client_ad_path(@ad.ad_client.id,@ad.id), method: :delete, data: {confirm: "本当に削除してもよろしいですか？"},class: "btn btn-danger" %></td>
     </div>
     </div>
     <span class="link-button" ><%= link_to "広告一覧へ戻る", ad_client_ads_path(current_ad_client)  %>

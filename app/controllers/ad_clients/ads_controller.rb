@@ -13,6 +13,10 @@ class AdClients::AdsController < ApplicationController
     @ad = Ad.new(ad_params)
     @ad.ad_client_id = current_ad_client.id
     if @ad.save
+      tags = Vision.get_image_data(@ad.ad_image)
+      tags.each do |tag|
+        @ad.tags.create(name: tag)
+      end
       redirect_to ad_client_ad_path(@ad.ad_client_id,@ad.id)
     else
       render 'new'
@@ -31,6 +35,12 @@ class AdClients::AdsController < ApplicationController
    	@ad = Ad.find(params[:id])
    	@ad.update(ad_params)
    	redirect_to ad_client_ads_path
+  end
+
+  def destroy
+  	@ad = Ad.find(params[:id])
+  	@ad.destroy
+  	redirect_to ad_client_ads_path
   end
 
 

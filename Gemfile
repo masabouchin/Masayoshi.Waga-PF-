@@ -76,8 +76,6 @@ gem 'bcrypt_pbkdf'
 gem 'geocoder'
 gem 'google-cloud-vision', require: false
 
-
-gem 'dotenv-rails'
 group :production do
   gem 'mysql2'
 end
