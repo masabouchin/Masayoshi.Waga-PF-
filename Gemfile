@@ -76,6 +76,6 @@ gem 'bcrypt_pbkdf'
 gem 'geocoder'
 gem 'google-cloud-vision', require: false
 
-group :production do
+group :production, :staging do
   gem 'mysql2'
 end
