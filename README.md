@@ -27,6 +27,24 @@ OSIPerはオーナーがサロンを開催されている時間や会員様の�
 ## 設計書
 https://www.draw.io/#G19ZJv_dxRP5dAzvknOqRrfm3kBVtEbuYP
 
+### 開発環境
+# OS
+Linux(Ubuntu)
+
+# 言語
+HTML,CSS,JavaScript,Ruby,SQL
+
+# フレームワーク
+Ruby on Rails
+
+# Railsライブラリ
+
+# JSライブラリ
+
+# インフラ
+AWS(EC2,RDS,EIP)
+
+# その他ツールなど
 
 ### 機能一覧
 https://docs.google.com/spreadsheets/d/1_ng-x9X923wncOdpscVTXkKDEFuCw7XQMblEpxZnKfU/edit?usp=sharing
