@@ -207,6 +207,7 @@ GEM
     multipart-post (2.1.1)
     mustermann (1.1.1)
       ruby2_keywords (~> 0.0.1)
+    mysql2 (0.5.4)
     netrc (0.11.0)
     nio4r (2.5.2)
     nokogiri (1.10.9)
@@ -221,7 +222,7 @@ GEM
       pry (~> 0.13.0)
     public_suffix (4.0.5)
     puma (3.12.6)
-    rack (2.2.2)
+    rack (2.2.6.2)
     rack-protection (2.0.8.1)
       rack
     rack-test (1.1.0)
@@ -359,6 +360,7 @@ DEPENDENCIES
   kaminari
   listen (>= 3.0.5, < 3.2)
   momentjs-rails
+  mysql2
   pry-byebug
   puma (~> 3.11)
   rails (~> 5.2.4, >= 5.2.4.3)
